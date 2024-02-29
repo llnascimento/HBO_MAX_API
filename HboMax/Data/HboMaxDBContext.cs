@@ -1,4 +1,5 @@
-﻿using HboMax.Models;
+﻿using HboMax.Data.Map;
+using HboMax.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HboMax.Data
@@ -13,7 +14,7 @@ namespace HboMax.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
 
             base.OnModelCreating(modelBuilder);
 
