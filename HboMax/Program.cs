@@ -20,7 +20,7 @@ namespace HboMax
 
             builder.Services.AddEntityFrameworkSqlServer()
               .AddDbContext<HboMaxDBContext>(
-                  options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"))
+                  options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataSomee"))
             );
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositoriocs>();
