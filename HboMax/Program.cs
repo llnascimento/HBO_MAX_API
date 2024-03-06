@@ -25,6 +25,9 @@ namespace HboMax
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositoriocs>();
 
+            builder.Services.AddCors();
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -35,6 +38,13 @@ namespace HboMax
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(c =>
+            {
+                c.AllowAnyHeader();
+                c.AllowAnyMethod();
+                c.AllowAnyOrigin();
+            });
 
             app.UseAuthorization();
 
